@@ -1,0 +1,27 @@
+*********** Practice Set - 1 ***********
+Q. create database for your company
+
+step1 - create table store employee info(id, name ,salary),
+step2 - Add following information in table :
+1,"sakshi",25000
+2,"priti",43000
+3,"aniket",45000
+ 
+-------------------------------------------------------------------
+CREATE DATABASE IF NOT EXISTS company;
+
+USE company;
+
+CREATE TABLE employee(
+	id INT PRIMARY KEY,
+    name VARCHAR(50),
+    salary INT
+);
+
+INSERT INTO employee(id,name,salary) 
+VALUES
+(1,"sakshi",25000),
+(2,"priti",43000),
+(3,"aniket",45000);
+
+SELECT * FROM employee;
