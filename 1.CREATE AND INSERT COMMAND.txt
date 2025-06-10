@@ -1,0 +1,30 @@
+********************************* CREATE AND INSERT COMMAND***************************************
+
+1)Create database college 
+2)create table student
+3)Insert data into table
+
+---------------------------------------------------------------------------------------
+
+CREATE DATABASE college;
+
+USE college;
+
+CREATE TABLE student (
+	rollNo INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks INT NOT NULL,
+    grade VARCHAR(1),
+    city VARCHAR(20)
+);
+
+INSERT INTO student
+(rollNo, name, marks, grade, city)
+VALUES
+(1,"sakshi",88,"A","pune"),
+(2,"akanksha",90,"O","Mumbai"),
+(3,"prachi",70,"B","Karad"),
+(4,"teja", 78,"A","Patan");
+
+SELECT * FROM student;
+
