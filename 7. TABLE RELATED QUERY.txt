@@ -1,0 +1,58 @@
+********************************** TABLE RELATED QUERY *************************************
+1. ADD COLUMN -
+Syntax - ALTER TABLE table_name ADD COLUMN column_name datatype constraint;
+
+2. MODIFY COLUMN - 
+Syntax - ALTER TABLE table_name MODIFY column_name datatype;
+
+3. CHANGE column -
+Syntax - ALTER TABLE table_name CHANGE column_name;
+
+4. DROP column -
+Syntax - ALTER TABLE table_name DROP COLUMN column_name;
+
+5. RENAME Table -
+Syntax - ALTER TABLE table_name RENAME TO new_table_name;
+
+----------------------------------------------------------------------------------
+
+CREATE DATABASE college;
+
+USE college;
+
+CREATE TABLE student (
+	rollNo INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks INT NOT NULL,
+    grade VARCHAR(1),
+    city VARCHAR(20)
+);
+
+INSERT INTO student
+(rollNo, name, marks, grade, city)
+VALUES
+(1,"sakshi",88,"A","pune"),
+(2,"akanksha",90,"O","Mumbai"),
+(3,"prachi",70,"B","Karad"),
+(4,"teja", 78,"A","Patan");
+
+INSERT INTO student
+(rollNo, name, marks, grade, city)
+VALUES
+(5,"aniket",87,"A","pune"),
+(6,"nikhil",67,"D","Mumbai"),
+(7,"riya",43,"D","Nashik");
+
+SELECT * FROM student;
+
+ALTER TABLE student ADD COLUMN age INT NOT NULL DEFAULT 19;
+
+ALTER TABLE student MODIFY age VARCHAR(2);
+
+ALTER TABLE student CHANGE age stud_age INT;
+
+ALTER TABLE student DROP COLUMN stud_age;
+
+ALTER TABLE student RENAME TO student_info;
+
+-------------------------------------------------------------------------------------
