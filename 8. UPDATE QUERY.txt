@@ -1,7 +1,7 @@
 ******************************************** UPDATE QUERY ********************************************
 
 Syntax -
-	SELECT table_name SET col = val WHERE condition;
+	UPDATE table_name SET col = val WHERE condition;
 
 --------------------------------------------------------------------------------------
 
