@@ -70,16 +70,6 @@ COUNT(column) vs COUNT(DISTINCT(column)):
 - COUNT(DISTINCT(column)) - returns the number of unique non-`NULL` values in the given column
   - eg. `SELECT COUNT(DISTINCT(category)) FROM my_table GROUP BY category` - how many different categories are there
 
-##### Nesting Aggregate Functions
-
-Yyou can nest aggregate functions up to two levels deep.
-
-Eg. this query finds the category with the most records:
-
-```sql
-SELECT category, MAX(COUNT(1)) FROM mytable GROUP BY category;
-```
-
 ### JOINs
 
 Returns a data set by merging the rows of two tables on given fields which are expected to have matching values
@@ -93,22 +83,6 @@ representing that their rows are linked.
   found in the left table. Shows `NULL`s for fields that don't exist in the other table
 - `Full JOIN` / `FULL Outer JOIN` - returns records that exist in either table - shows `NULL`s for fields that don't
   exist in the other table
-- `CROSS JOIN` - returns all combinations of all records in both tables (cartesian product)
-  - there is no join field for this by definition since all rows from one table are multiplied by all rows from the
-    other table
-- `SELF JOIN` - a join from one table to another record in the same table
-  - used where a field in the table refers to another field in the same table such as hierarchical structures
-    - eg. in an employees table the `manager_id` field refers to the `employee_id` of the manager who exists in another
-      row the same table
-
-### Rows vs Records vs Columns vs Fields
-
-- Row - a line of data in a table
-- Record - same thing as a row
-- Column - a data type that each row may populate, depending on whether `NULL` (no value) is allowed in the column
-  definition via a definition constraint.
-- Field - a specific intersection of Row and Column - a single value from a single row in the table in the specified
-  column.
 
 ### Constraints
 
